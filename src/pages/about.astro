@@ -3,64 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TopBar from '../components/TopBar.astro';
 import Icon from '../components/Icon.astro';
 import { site } from '../site';
+import about from '../data/about.json';
 
-// Edit these to tell your story. (Placeholder content for now.)
-const experience = [
-  {
-    role: 'Independent Writer & Builder',
-    org: 'Nikosnotes',
-    period: '2024 — Present',
-    detail:
-      'Writing long-form essays on finance, technology, and energy, and building projects that explore the ideas behind them.',
-  },
-  {
-    role: 'Add your role',
-    org: 'Company / Project',
-    period: '20XX — 20XX',
-    detail:
-      'A short description of what you did, the impact you had, and what you learned.',
-  },
-  {
-    role: 'Add your role',
-    org: 'Company / Project',
-    period: '20XX — 20XX',
-    detail: 'Another role — replace this with your real experience.',
-  },
-];
-
-const education = [
-  {
-    degree: 'Your degree (e.g. BSc Economics)',
-    school: 'University name',
-    period: '20XX — 20XX',
-    detail: 'A line about your focus, achievements, or relevant coursework.',
-  },
-  {
-    degree: 'Another qualification',
-    school: 'School / Institution',
-    period: '20XX — 20XX',
-    detail: 'Replace with your real education history.',
-  },
-];
-
-const skills = [
-  'Financial analysis',
-  'Markets & macro',
-  'Writing & research',
-  'Web development',
-  'Energy & sustainability',
-  'Data & visualization',
-  'Product thinking',
-  'Public speaking',
-];
-
-const hobbies = ['Reading', 'Running', 'Chess', 'Travel', 'Photography', 'Cooking'];
-
-const certifications = [
-  { title: 'Certification name', issuer: 'Issuing organization', year: '20XX' },
-  { title: 'Another certificate', issuer: 'Issuing organization', year: '20XX' },
-  { title: 'Course or credential', issuer: 'Platform / Institution', year: '20XX' },
-];
+// About content is editable in the CMS at /admin → "About Page".
+const { portrait, headline, experience, education, skills, hobbies, certifications } = about;
+// Story is one text field; split it into paragraphs on blank/new lines.
+const storyParagraphs = (about.story || '')
+  .split(/\n+/)
+  .map((p) => p.trim())
+  .filter(Boolean);
 ---
 <BaseLayout title="About" active="/about">
   <TopBar title="About" subtitle="Who I am." showSearch={false} />
@@ -70,7 +21,7 @@ const certifications = [
     <div class="relative">
       <div class="absolute -inset-3 -z-10 rounded-[1.75rem] bg-gradient-to-br from-teal/20 to-growth/20 blur-xl"></div>
       <img
-        src={site.portrait}
+        src={portrait}
         alt={site.author}
         class="aspect-[4/5] w-full rounded-3xl object-cover shadow-floating ring-1 ring-ink/5"
       />
@@ -78,10 +29,10 @@ const certifications = [
     <div>
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-growth">About me</p>
       <h2 class="mt-2 text-3xl font-extrabold leading-tight tracking-tightest text-ink dark:text-paper sm:text-4xl">
-        Hi, I'm {site.author}.
+        {headline}
       </h2>
       <div class="mt-4 space-y-3 text-navy/70 dark:text-mist/70">
-        {site.story.map((p) => <p class="leading-relaxed">{p}</p>)}
+        {storyParagraphs.map((p) => <p class="leading-relaxed">{p}</p>)}
       </div>
       <a
         href={`mailto:${site.email}`}

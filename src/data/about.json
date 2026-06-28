@@ -1,0 +1,40 @@
+{
+  "portrait": "/me.jpg",
+  "headline": "Hi, I'm Niko.",
+  "story": "Hi, I'm Niko. I write about finance, economics, technology, energy, sports, and the books and ideas that tie them together.\n\nThis is a placeholder — replace it with a few sentences about who you are, what you care about, and what you want readers to take away. Keep it short and personal.\n\nWhen I'm not writing, I'm building projects that put these ideas into practice.",
+  "experience": [
+    {
+      "role": "Independent Writer & Builder",
+      "org": "Nikosnotes",
+      "period": "2024 — Present",
+      "detail": "Writing long-form essays on finance, technology, and energy, and building projects that explore the ideas behind them."
+    },
+    {
+      "role": "Add your role",
+      "org": "Company / Project",
+      "period": "20XX — 20XX",
+      "detail": "A short description of what you did, the impact you had, and what you learned."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Your degree (e.g. BSc Economics)",
+      "school": "University name",
+      "period": "20XX — 20XX",
+      "detail": "A line about your focus, achievements, or relevant coursework."
+    }
+  ],
+  "skills": [
+    "Financial analysis",
+    "Markets & macro",
+    "Writing & research",
+    "Web development",
+    "Energy & sustainability",
+    "Data & visualization"
+  ],
+  "hobbies": ["Reading", "Running", "Chess", "Travel", "Photography", "Cooking"],
+  "certifications": [
+    { "title": "Certification name", "issuer": "Issuing organization", "year": "20XX" },
+    { "title": "Another certificate", "issuer": "Issuing organization", "year": "20XX" }
+  ]
+}

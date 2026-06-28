@@ -66,3 +66,46 @@ collections:
       - { label: 'Feature on homepage', name: featured, widget: boolean, default: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Body, name: body, widget: markdown }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About Page
+        file: src/data/about.json
+        description: 'Your About page — bio, photo, experience, education, skills, hobbies, certifications.'
+        fields:
+          - { label: 'Profile photo', name: portrait, widget: image, required: false, hint: 'Square photo works best. Updates the About page and sidebar.' }
+          - { label: Headline, name: headline, widget: string, hint: "e.g. \"Hi, I'm Niko.\"" }
+          - { label: Story, name: story, widget: text, hint: 'A short bio. Separate paragraphs with a blank line.' }
+          - label: Experience
+            name: experience
+            widget: list
+            label_singular: Role
+            summary: '{{fields.role}} — {{fields.org}}'
+            fields:
+              - { label: Role, name: role, widget: string }
+              - { label: Organization, name: org, widget: string }
+              - { label: Period, name: period, widget: string, hint: 'e.g. 2022 — Present' }
+              - { label: Details, name: detail, widget: text }
+          - label: Education
+            name: education
+            widget: list
+            label_singular: Qualification
+            summary: '{{fields.degree}} — {{fields.school}}'
+            fields:
+              - { label: Degree, name: degree, widget: string }
+              - { label: School, name: school, widget: string }
+              - { label: Period, name: period, widget: string }
+              - { label: Details, name: detail, widget: text }
+          - { label: Skills, name: skills, widget: list, hint: 'Add one skill per item.' }
+          - { label: Hobbies, name: hobbies, widget: list, hint: 'Add one hobby per item.' }
+          - label: Certifications
+            name: certifications
+            widget: list
+            label_singular: Certification
+            summary: '{{fields.title}}'
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Issuer, name: issuer, widget: string }
+              - { label: Year, name: year, widget: string }

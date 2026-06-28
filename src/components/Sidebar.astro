@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import { site, nav } from '../site';
+import about from '../data/about.json';
 
 interface Props {
   active?: string; // href of the active nav item
@@ -27,7 +28,7 @@ const isActive = (href: string) =>
     class="relative z-10 mb-7 flex items-center gap-3 rounded-2xl bg-white/[0.04] p-3 ring-1 ring-white/5 transition-colors duration-200 ease-spring hover:bg-white/[0.07]"
   >
     <img
-      src={site.avatar}
+      src={about.portrait || site.avatar}
       alt={site.author}
       width="44"
       height="44"
