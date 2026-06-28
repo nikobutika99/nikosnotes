@@ -13,6 +13,8 @@ backend:
   name: github
   repo: nikobutika99/nikosnotes
   branch: main
+  base_url: https://velvety-tartufo-c82085.netlify.app
+  auth_endpoint: /.netlify/functions/auth
 
 # Lets you run the editor against local files during development.
 local_backend: true

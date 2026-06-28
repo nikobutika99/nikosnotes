@@ -59,16 +59,21 @@ Your markdown body here.
 
 ## Going live with the editor (production auth)
 
-Netlify Identity is deprecated for new sites, so the live `/admin` uses Decap's **GitHub backend** with an OAuth handler:
+The live `/admin` uses Decap's **GitHub backend** with a self-hosted OAuth handler
+(Netlify Functions in `netlify/functions/auth.js` + `callback.js`). To enable it:
 
-1. In `public/admin/config.yml`, set `repo: your-username/nikosnotes`.
-2. Create a **GitHub OAuth App** (Settings → Developer settings → OAuth Apps).
-   Authorization callback URL → your OAuth handler.
-3. Deploy a small OAuth handler — easiest options:
-   - The community **Netlify function** `netlify-cms-oauth` / `decap-oauth` (one-click templates exist), or
-   - Switch the editor to **Sveltia CMS** (a drop-in that uses the same `config.yml` and has simpler GitHub login) by swapping the script in `public/admin/index.html`.
+1. Create a **GitHub OAuth App**: https://github.com/settings/developers → *New OAuth App*
+   - **Homepage URL:** `https://velvety-tartufo-c82085.netlify.app`
+   - **Authorization callback URL:** `https://velvety-tartufo-c82085.netlify.app/.netlify/functions/callback`
+   - Register, then **generate a client secret**.
+2. In Netlify → *Site configuration → Environment variables*, add:
+   - `GITHUB_OAUTH_ID` = the OAuth app's **Client ID**
+   - `GITHUB_OAUTH_SECRET` = the **Client secret**
+3. **Trigger deploy** (Netlify → Deploys → *Trigger deploy → Deploy site*) so the functions pick up the vars.
+4. Open `/admin`, click **Login with GitHub** → authorize → write & publish.
 
-Until then, the **local** editor (above) works fully.
+If you ever change the site's domain, update `base_url` in `public/admin/config.yml`
+and the two URLs in the GitHub OAuth App.
 
 ## Design QA
 

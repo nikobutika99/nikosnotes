@@ -5,5 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Serverless OAuth handler for the Decap CMS editor (/admin).
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Netlify automatically serves /404.html for not-found routes — no catch-all
 # redirect needed (a "/*" redirect could shadow real pages like /admin).
