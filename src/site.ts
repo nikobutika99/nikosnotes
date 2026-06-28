@@ -1,6 +1,6 @@
 // Central site configuration. Edit profile details here.
 export const site = {
-  name: 'Nikosnotes',
+  name: "Niko's Notes",
   author: 'Niko',
   email: 'nikoloz.butikashvili9@gmail.com',
   tagline: 'Thoughts on finance, technology, energy, and the future.',
