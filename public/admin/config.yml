@@ -11,7 +11,7 @@
 
 backend:
   name: github
-  repo: your-username/nikosnotes # <-- change to your GitHub repo
+  repo: nikobutika99/nikosnotes
   branch: main
 
 # Lets you run the editor against local files during development.

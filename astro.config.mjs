@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   // Update `site` to your Netlify URL (or custom domain) before deploying.
-  site: 'https://nikosnotes.netlify.app',
+  site: 'https://velvety-tartufo-c82085.netlify.app',
   integrations: [tailwind({ applyBaseStyles: false })],
   devToolbar: { enabled: false },
   server: {
