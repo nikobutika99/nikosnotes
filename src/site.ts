@@ -6,10 +6,10 @@ export const site = {
   tagline: 'Thoughts on finance, technology, energy, and the future.',
   intro:
     'Exploring the ideas shaping our world and building a better future through knowledge, discipline, and curiosity.',
-  // Replace with a real photo dropped in /public or uploaded via the CMS.
-  avatar: 'https://placehold.co/96x96/1FA09A/F7F8FA?text=N',
-  // About-page portrait — swap for a real photo (e.g. '/me.jpg' placed in /public).
-  portrait: 'https://placehold.co/640x720/0D1321/5FBF72?text=Your+Photo',
+  // Profile photo (square) used for the sidebar avatar.
+  avatar: '/me.jpg',
+  // About-page portrait.
+  portrait: '/me.jpg',
   // Short story shown in the "About me" section — one entry per paragraph.
   story: [
     "Hi, I'm Niko. I write about finance, economics, technology, energy, sports, and the books and ideas that tie them together.",
