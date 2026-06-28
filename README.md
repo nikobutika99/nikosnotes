@@ -63,8 +63,8 @@ The live `/admin` uses Decap's **GitHub backend** with a self-hosted OAuth handl
 (Netlify Functions in `netlify/functions/auth.js` + `callback.js`). To enable it:
 
 1. Create a **GitHub OAuth App**: https://github.com/settings/developers → *New OAuth App*
-   - **Homepage URL:** `https://velvety-tartufo-c82085.netlify.app`
-   - **Authorization callback URL:** `https://velvety-tartufo-c82085.netlify.app/.netlify/functions/callback`
+   - **Homepage URL:** `https://nikosnotes.com`
+   - **Authorization callback URL:** `https://nikosnotes.com/.netlify/functions/callback`
    - Register, then **generate a client secret**.
 2. In Netlify → *Site configuration → Environment variables*, add:
    - `GITHUB_OAUTH_ID` = the OAuth app's **Client ID**
