@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import HeroCard from '../components/HeroCard.astro';
+import ContentCard from '../components/ContentCard.astro';
+import FilterScript from '../components/FilterScript.astro';
+import { getAllCards } from '../lib/content';
+import { site } from '../site';
+
+const cards = await getAllCards();
+const featured = cards.find((c) => c.featured) ?? cards[0];
+const rest = cards.filter((c) => c !== featured);
+---
+<BaseLayout active="/">
+  <TopBar title={site.name} subtitle={site.tagline} showTabs showTopicFilter />
+
+  {featured && (
+    <div class="mb-7">
+      <HeroCard item={featured} />
+    </div>
+  )}
+
+  <section
+    id="card-grid"
+    class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3"
+  >
+    {rest.map((item) => <ContentCard item={item} />)}
+  </section>
+
+  <div id="empty-state" class="hidden py-20 text-center">
+    <p class="font-display text-lg font-semibold text-ink dark:text-paper">No notes found</p>
+    <p class="mt-1 text-sm text-navy/50 dark:text-mist/50">Try a different search or topic.</p>
+  </div>
+
+  {cards.length === 0 && (
+    <div class="rounded-2xl border border-dashed border-ink/15 bg-white/50 p-10 text-center dark:border-white/10 dark:bg-navy/40">
+      <p class="font-display text-lg font-semibold text-ink dark:text-paper">No posts yet</p>
+      <p class="mt-1 text-sm text-navy/55 dark:text-mist/55">
+        Add your first note from the editor at <a href="/admin" class="font-semibold text-teal underline underline-offset-2">/admin</a>.
+      </p>
+    </div>
+  )}
+
+  <FilterScript />
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import CategoryTag from './CategoryTag.astro';
+import Icon from './Icon.astro';
+import { formatDate, coverFor, type CardItem } from '../lib/content';
+
+interface Props {
+  item: CardItem;
+}
+const { item } = Astro.props;
+const cover = coverFor(item);
+---
+<article
+  class="card-item group relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden rounded-3xl p-7 shadow-floating sm:min-h-[360px] sm:p-9"
+  data-type={item.type}
+  data-category={item.category}
+  data-title={item.title.toLowerCase()}
+  data-tags={item.tags.join(' ').toLowerCase()}
+  data-date={item.date.getTime()}
+>
+  <!-- Background image + layered treatment -->
+  <img
+    src={cover}
+    alt=""
+    class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 ease-spring group-hover:scale-105"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/85 to-ink/45"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/85 via-ink/40 to-transparent"></div>
+  <div class="absolute inset-0 -z-10 bg-navy/30 mix-blend-multiply"></div>
+  <div class="grain absolute inset-0 -z-10"></div>
+
+  <div class="relative max-w-xl">
+    <div class="mb-4 flex items-center gap-2">
+      <CategoryTag category={item.category} light />
+      <span class="text-xs font-medium text-mist/70">Featured</span>
+    </div>
+    <a href={item.url}>
+      <h2 class="text-3xl font-extrabold leading-[1.05] tracking-tightest text-paper sm:text-[2.6rem]">
+        {item.title}
+      </h2>
+    </a>
+    <p class="mt-3 max-w-md text-sm leading-relaxed text-mist/75 sm:text-base">
+      {item.description}
+    </p>
+
+    <div class="mt-6 flex items-center gap-4">
+      <a
+        href={item.url}
+        class="inline-flex items-center gap-2 rounded-full bg-growth px-5 py-2.5 text-sm font-semibold text-ink shadow-glow transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-teal hover:text-paper active:translate-y-0 focus-visible:ring-2 focus-visible:ring-paper"
+      >
+        Read article
+        <Icon name="arrow" class="w-4 h-4" />
+      </a>
+      <span class="text-xs text-mist/60">{formatDate(item.date)}</span>
+    </div>
+  </div>
+</article>

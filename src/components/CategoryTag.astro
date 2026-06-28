@@ -1,0 +1,32 @@
+---
+interface Props {
+  category: string;
+  class?: string;
+  light?: boolean; // for use over dark imagery
+}
+const { category, class: className = '', light = false } = Astro.props;
+
+// Per-category accent tint (derived from brand palette, no default Tailwind hues)
+const tints: Record<string, string> = {
+  Finance: 'text-teal bg-teal/10',
+  Economy: 'text-navy bg-navy/10',
+  Technology: 'text-teal bg-teal/10',
+  Energy: 'text-growth bg-growth/15',
+  Sports: 'text-growth bg-growth/15',
+  Literature: 'text-navy bg-navy/10',
+  Project: 'text-ink bg-ink/[0.06]',
+};
+const tint = tints[category] ?? 'text-navy bg-navy/10';
+const cls = light
+  ? 'bg-white/15 text-white ring-1 ring-white/25 backdrop-blur-sm'
+  : tint;
+---
+<span
+  class:list={[
+    'inline-flex items-center rounded-full px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wide',
+    cls,
+    className,
+  ]}
+>
+  {category}
+</span>

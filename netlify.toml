@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify automatically serves /404.html for not-found routes — no catch-all
+# redirect needed (a "/*" redirect could shadow real pages like /admin).

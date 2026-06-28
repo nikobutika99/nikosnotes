@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopBar from '../../components/TopBar.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import FilterScript from '../../components/FilterScript.astro';
+import { getBlogCards } from '../../lib/content';
+import { CATEGORIES } from '../../content/config';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((category) => ({
+    params: { category: category.toLowerCase() },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const all = await getBlogCards();
+const items = all.filter((c) => c.category === category);
+
+const blurbs: Record<string, string> = {
+  Finance: 'Markets, money, and the mechanics of wealth.',
+  Economy: 'Cycles, policy, and the forces shaping growth.',
+  Technology: 'Tools, innovation, and the digital future.',
+  Energy: 'Renewables, sustainability, and the energy transition.',
+  Sports: 'Discipline, mindset, and lessons from the field.',
+  Literature: 'Books, philosophy, and ideas that shape how we think.',
+};
+---
+<BaseLayout title={category} active={`/category/${category.toLowerCase()}`}>
+  <TopBar title={category} subtitle={blurbs[category]} />
+
+  <section id="card-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {items.map((item) => <ContentCard item={item} />)}
+  </section>
+
+  <div id="empty-state" class="hidden py-20 text-center">
+    <p class="font-display text-lg font-semibold text-ink dark:text-paper">No notes found</p>
+    <p class="mt-1 text-sm text-navy/50 dark:text-mist/50">Try a different search.</p>
+  </div>
+
+  {items.length === 0 && (
+    <div class="rounded-2xl border border-dashed border-ink/15 bg-white/50 p-10 text-center dark:border-white/10 dark:bg-navy/40">
+      <p class="font-display text-lg font-semibold text-ink dark:text-paper">Nothing here yet</p>
+      <p class="mt-1 text-sm text-navy/55 dark:text-mist/55">
+        Posts tagged <strong>{category}</strong> will show up here.
+      </p>
+    </div>
+  )}
+
+  <FilterScript />
+</BaseLayout>

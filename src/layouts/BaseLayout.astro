@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import Sidebar from '../components/Sidebar.astro';
+import { site } from '../site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+const {
+  title,
+  description = site.tagline,
+  active = Astro.url.pathname,
+} = Astro.props;
+const pageTitle = title ? `${title} · ${site.name}` : `${site.name} — ${site.tagline}`;
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts: Montserrat (display) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Set theme before paint to avoid flash -->
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-mist text-ink dark:bg-ink dark:text-mist">
+    <Sidebar active={active} />
+
+    <div class="lg:pl-[264px]">
+      <main class="mx-auto min-h-screen max-w-[1180px] px-5 py-6 sm:px-8 sm:py-9">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

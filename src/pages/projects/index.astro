@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopBar from '../../components/TopBar.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import FilterScript from '../../components/FilterScript.astro';
+import { getProjectCards } from '../../lib/content';
+
+const projects = await getProjectCards();
+---
+<BaseLayout title="Projects" active="/projects">
+  <TopBar title="Projects" subtitle="Things I've designed, built, and shipped." />
+
+  <section id="card-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {projects.map((item) => <ContentCard item={item} />)}
+  </section>
+
+  <div id="empty-state" class="hidden py-20 text-center">
+    <p class="font-display text-lg font-semibold text-ink dark:text-paper">No projects found</p>
+    <p class="mt-1 text-sm text-navy/50 dark:text-mist/50">Try a different search.</p>
+  </div>
+
+  {projects.length === 0 && (
+    <div class="rounded-2xl border border-dashed border-ink/15 bg-white/50 p-10 text-center dark:border-white/10 dark:bg-navy/40">
+      <p class="font-display text-lg font-semibold text-ink dark:text-paper">No projects yet</p>
+      <p class="mt-1 text-sm text-navy/55 dark:text-mist/55">
+        Add one from the editor at <a href="/admin" class="font-semibold text-teal underline underline-offset-2">/admin</a>.
+      </p>
+    </div>
+  )}
+
+  <FilterScript />
+</BaseLayout>

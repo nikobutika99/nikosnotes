@@ -1,0 +1,90 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CategoryTag from '../components/CategoryTag.astro';
+import Icon from '../components/Icon.astro';
+import { formatDate, coverFor } from '../lib/content';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  date: Date;
+  cover?: string;
+  tags?: string[];
+  link?: string;
+  backHref: string;
+  backLabel: string;
+  active?: string;
+}
+const {
+  title,
+  description,
+  category,
+  date,
+  cover,
+  tags = [],
+  link,
+  backHref,
+  backLabel,
+  active,
+} = Astro.props;
+const img = coverFor({ cover, title });
+---
+<BaseLayout title={title} description={description} active={active}>
+  <article class="mx-auto max-w-3xl">
+    <a
+      href={backHref}
+      class="group mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-navy/55 transition-colors duration-200 ease-spring hover:text-teal dark:text-mist/55"
+    >
+      <span class="transition-transform duration-200 ease-spring group-hover:-translate-x-0.5">
+        <Icon name="arrow" class="w-4 h-4 rotate-180" />
+      </span>
+      {backLabel}
+    </a>
+
+    <div class="mb-3 flex items-center gap-3">
+      <CategoryTag category={category} />
+      <span class="flex items-center gap-1.5 text-xs text-navy/50 dark:text-mist/50">
+        <Icon name="clock" class="w-3.5 h-3.5" />
+        {formatDate(date)}
+      </span>
+    </div>
+
+    <h1 class="text-3xl font-extrabold leading-[1.1] tracking-tightest text-ink dark:text-paper sm:text-[2.6rem]">
+      {title}
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed text-navy/65 dark:text-mist/65">{description}</p>
+
+    {link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-5 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-teal active:translate-y-0 focus-visible:ring-2 focus-visible:ring-teal dark:bg-paper dark:text-ink dark:hover:bg-teal dark:hover:text-paper"
+      >
+        Visit project
+        <Icon name="link" class="w-4 h-4" />
+      </a>
+    )}
+
+    <div class="relative my-8 aspect-[16/8] overflow-hidden rounded-3xl shadow-floating">
+      <img src={img} alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-teal/10 mix-blend-multiply"></div>
+    </div>
+
+    <div class="prose-niko dark:text-mist/80">
+      <slot />
+    </div>
+
+    {tags.length > 0 && (
+      <div class="mt-10 flex flex-wrap gap-2 border-t border-ink/5 pt-6 dark:border-white/5">
+        {tags.map((t) => (
+          <span class="rounded-full bg-ink/[0.04] px-3 py-1 text-xs font-medium text-navy/60 dark:bg-white/5 dark:text-mist/60">
+            #{t}
+          </span>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

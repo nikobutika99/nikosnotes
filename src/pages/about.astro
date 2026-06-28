@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../site';
+
+// Edit these to tell your story. (Placeholder content for now.)
+const experience = [
+  {
+    role: 'Independent Writer & Builder',
+    org: 'Nikosnotes',
+    period: '2024 — Present',
+    detail:
+      'Writing long-form essays on finance, technology, and energy, and building projects that explore the ideas behind them.',
+  },
+  {
+    role: 'Add your role',
+    org: 'Company / Project',
+    period: '20XX — 20XX',
+    detail:
+      'A short description of what you did, the impact you had, and what you learned.',
+  },
+  {
+    role: 'Add your role',
+    org: 'Company / Project',
+    period: '20XX — 20XX',
+    detail: 'Another role — replace this with your real experience.',
+  },
+];
+
+const education = [
+  {
+    degree: 'Your degree (e.g. BSc Economics)',
+    school: 'University name',
+    period: '20XX — 20XX',
+    detail: 'A line about your focus, achievements, or relevant coursework.',
+  },
+  {
+    degree: 'Another qualification',
+    school: 'School / Institution',
+    period: '20XX — 20XX',
+    detail: 'Replace with your real education history.',
+  },
+];
+
+const skills = [
+  'Financial analysis',
+  'Markets & macro',
+  'Writing & research',
+  'Web development',
+  'Energy & sustainability',
+  'Data & visualization',
+  'Product thinking',
+  'Public speaking',
+];
+
+const hobbies = ['Reading', 'Running', 'Chess', 'Travel', 'Photography', 'Cooking'];
+
+const certifications = [
+  { title: 'Certification name', issuer: 'Issuing organization', year: '20XX' },
+  { title: 'Another certificate', issuer: 'Issuing organization', year: '20XX' },
+  { title: 'Course or credential', issuer: 'Platform / Institution', year: '20XX' },
+];
+---
+<BaseLayout title="About" active="/about">
+  <TopBar title="About" subtitle="Who I am." showSearch={false} />
+
+  <!-- About me -->
+  <section class="grid grid-cols-1 gap-8 sm:grid-cols-[0.85fr_1.15fr] sm:items-center">
+    <div class="relative">
+      <div class="absolute -inset-3 -z-10 rounded-[1.75rem] bg-gradient-to-br from-teal/20 to-growth/20 blur-xl"></div>
+      <img
+        src={site.portrait}
+        alt={site.author}
+        class="aspect-[4/5] w-full rounded-3xl object-cover shadow-floating ring-1 ring-ink/5"
+      />
+    </div>
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-growth">About me</p>
+      <h2 class="mt-2 text-3xl font-extrabold leading-tight tracking-tightest text-ink dark:text-paper sm:text-4xl">
+        Hi, I'm {site.author}.
+      </h2>
+      <div class="mt-4 space-y-3 text-navy/70 dark:text-mist/70">
+        {site.story.map((p) => <p class="leading-relaxed">{p}</p>)}
+      </div>
+      <a
+        href={`mailto:${site.email}`}
+        class="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-teal active:translate-y-0 focus-visible:ring-2 focus-visible:ring-teal dark:bg-paper dark:text-ink dark:hover:bg-teal dark:hover:text-paper"
+      >
+        Get in touch
+        <Icon name="arrow" class="w-4 h-4" />
+      </a>
+    </div>
+  </section>
+
+  <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1.4fr_1fr]">
+    <!-- Left: Experience + Education -->
+    <div class="space-y-10">
+      <section>
+        <h3 class="mb-5 font-display text-xl font-bold text-ink dark:text-paper">Experience</h3>
+        <ol class="relative border-l-2 border-ink/10 pl-6 dark:border-white/10">
+          {experience.map((e) => (
+            <li class="relative mb-7 last:mb-0">
+              <span class="absolute -left-[31px] top-1 grid h-4 w-4 place-items-center rounded-full bg-growth ring-4 ring-mist dark:ring-ink"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                <h4 class="font-bold text-ink dark:text-paper">{e.role}</h4>
+                <span class="text-xs font-medium text-navy/45 dark:text-mist/45">{e.period}</span>
+              </div>
+              <p class="text-sm font-semibold text-teal">{e.org}</p>
+              <p class="mt-1.5 text-sm leading-relaxed text-navy/60 dark:text-mist/55">{e.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section>
+        <h3 class="mb-5 font-display text-xl font-bold text-ink dark:text-paper">Education</h3>
+        <ol class="relative border-l-2 border-ink/10 pl-6 dark:border-white/10">
+          {education.map((e) => (
+            <li class="relative mb-7 last:mb-0">
+              <span class="absolute -left-[31px] top-1 grid h-4 w-4 place-items-center rounded-full bg-teal ring-4 ring-mist dark:ring-ink"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                <h4 class="font-bold text-ink dark:text-paper">{e.degree}</h4>
+                <span class="text-xs font-medium text-navy/45 dark:text-mist/45">{e.period}</span>
+              </div>
+              <p class="text-sm font-semibold text-teal">{e.school}</p>
+              <p class="mt-1.5 text-sm leading-relaxed text-navy/60 dark:text-mist/55">{e.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </div>
+
+    <!-- Right: Skills + Hobbies + Certifications -->
+    <div>
+      <section>
+        <h3 class="mb-5 font-display text-xl font-bold text-ink dark:text-paper">Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          {skills.map((s) => (
+            <span class="rounded-full bg-white px-3.5 py-2 text-sm font-medium text-navy shadow-card ring-1 ring-ink/[0.04] dark:bg-navy dark:text-mist dark:ring-white/5">
+              {s}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-4 mt-8 font-display text-xl font-bold text-ink dark:text-paper">Hobbies</h3>
+        <div class="flex flex-wrap gap-2">
+          {hobbies.map((h) => (
+            <span class="rounded-full bg-teal/10 px-3.5 py-2 text-sm font-medium text-teal">{h}</span>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-4 mt-8 font-display text-xl font-bold text-ink dark:text-paper">Certifications</h3>
+        <ul class="space-y-2.5">
+          {certifications.map((c) => (
+            <li class="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-card ring-1 ring-ink/[0.04] transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:shadow-floating dark:bg-navy dark:ring-white/5">
+              <span class="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-growth/15 text-growth">
+                <Icon name="badge" class="w-5 h-5" />
+              </span>
+              <div>
+                <p class="font-semibold text-ink dark:text-paper">{c.title}</p>
+                <p class="text-xs text-navy/55 dark:text-mist/55">{c.issuer} · {c.year}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

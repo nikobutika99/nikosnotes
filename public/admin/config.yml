@@ -1,0 +1,66 @@
+# Decap CMS — the visual editor at /admin
+# Local testing: set `local_backend: true` (already on) and run, in two terminals:
+#   1) npx decap-server
+#   2) npm run dev
+# then open http://localhost:3000/admin/index.html — no login needed, posts save locally.
+# (Production on Netlify serves it at /admin/.)
+#
+# Production (Netlify): replace `repo` below with your GitHub "owner/repo".
+# Because Netlify Identity is deprecated for new sites, auth uses the GitHub
+# backend via an OAuth handler — see README "Going live with the editor".
+
+backend:
+  name: github
+  repo: your-username/nikosnotes # <-- change to your GitHub repo
+  branch: main
+
+# Lets you run the editor against local files during development.
+local_backend: true
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+publish_mode: simple
+
+collections:
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: src/content/blog
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}}  ·  {{category}}'
+    sortable_fields: [pubDate, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: description, widget: text, hint: 'One or two sentences shown on cards.' }
+      - label: Category
+        name: category
+        widget: select
+        options: [Finance, Economy, Technology, Energy, Sports, Literature]
+        default: Technology
+      - { label: 'Publish date', name: pubDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' }
+      - { label: 'Cover image', name: cover, widget: image, required: false, hint: 'Optional. A nice 16:10 image works best.' }
+      - { label: Tags, name: tags, widget: list, required: false, default: [] }
+      - { label: 'Feature on homepage', name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false, hint: 'Drafts are hidden on the live site.' }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Projects
+    label_singular: Project
+    folder: src/content/projects
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    sortable_fields: [pubDate, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: description, widget: text }
+      - { label: 'Tech / stack', name: stack, widget: list, required: false, default: [] }
+      - { label: 'Project link', name: link, widget: string, required: false, hint: 'Full URL (https://…) — optional.' }
+      - { label: 'Publish date', name: pubDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' }
+      - { label: 'Cover image', name: cover, widget: image, required: false }
+      - { label: 'Feature on homepage', name: featured, widget: boolean, default: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }

@@ -1,0 +1,108 @@
+---
+// Client-side search + tab filter + sort for any page with a .card-item grid.
+// All hooks are optional; the script no-ops when elements are absent.
+---
+<script>
+  const search = document.getElementById('site-search') as HTMLInputElement | null;
+  const grid = document.getElementById('card-grid');
+  const empty = document.getElementById('empty-state');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.card-item'));
+  const tabs = Array.from(
+    document.querySelectorAll<HTMLElement>('#content-tabs [data-tab]'),
+  );
+  const sorts = Array.from(document.querySelectorAll<HTMLElement>('[data-sort]'));
+  const topicSelect = document.getElementById('topic-filter') as HTMLSelectElement | null;
+  const topicWrap = document.getElementById('topic-filter-wrap');
+
+  // When tabs exist (the Home page) default to Blogs; otherwise show everything.
+  let activeTab = tabs.length ? 'blogs' : 'all';
+  let activeCategory = 'all';
+  let query = '';
+
+  function apply() {
+    cards.forEach((card) => {
+      const type = card.dataset.type;
+      const matchesTab =
+        activeTab === 'all' ||
+        (activeTab === 'blogs' && type === 'blog') ||
+        (activeTab === 'projects' && type === 'project');
+      // Topic filter constrains blog cards only.
+      const matchesCategory =
+        activeCategory === 'all' ||
+        type !== 'blog' ||
+        (card.dataset.category || '').toLowerCase() === activeCategory;
+      const hay = `${card.dataset.title} ${card.dataset.tags} ${card.dataset.category}`.toLowerCase();
+      const matchesQuery = !query || hay.includes(query);
+      card.classList.toggle('hidden', !(matchesTab && matchesQuery && matchesCategory));
+    });
+    if (empty) {
+      const anyVisible = cards.some((c) => !c.classList.contains('hidden'));
+      empty.classList.toggle('hidden', anyVisible);
+    }
+  }
+
+  search?.addEventListener('input', (e) => {
+    query = (e.target as HTMLInputElement).value.trim().toLowerCase();
+    apply();
+  });
+
+  topicSelect?.addEventListener('change', () => {
+    activeCategory = topicSelect.value;
+    apply();
+  });
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeTab = tab.dataset.tab || 'all';
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.classList.toggle('text-ink', on);
+        t.classList.toggle('dark:text-paper', on);
+        t.classList.toggle('text-navy/45', !on);
+        t.classList.toggle('dark:text-mist/45', !on);
+        const underline = t.querySelector('span');
+        underline?.classList.toggle('opacity-100', on);
+        underline?.classList.toggle('opacity-0', !on);
+      });
+      // Topic filter only applies to blogs — hide & reset it on the Projects tab.
+      if (topicWrap) topicWrap.classList.toggle('hidden', activeTab !== 'blogs');
+      if (activeTab !== 'blogs' && topicSelect) {
+        topicSelect.value = 'all';
+        activeCategory = 'all';
+      }
+      apply();
+    });
+  });
+
+  sorts.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.sort;
+      sorts.forEach((s) => {
+        const on = s === btn;
+        s.setAttribute('aria-pressed', on ? 'true' : 'false');
+        s.classList.toggle('bg-white', on);
+        s.classList.toggle('dark:bg-navy', on);
+        s.classList.toggle('text-ink', on);
+        s.classList.toggle('dark:text-paper', on);
+        s.classList.toggle('shadow-card', on);
+      });
+      if (!grid) return;
+      const items = Array.from(grid.children) as HTMLElement[];
+      items.sort((a, b) => {
+        const da = Number(a.dataset.date || 0);
+        const db = Number(b.dataset.date || 0);
+        if (mode === 'popular') {
+          const fa = a.dataset.featured === 'true' ? 1 : 0;
+          const fb = b.dataset.featured === 'true' ? 1 : 0;
+          if (fa !== fb) return fb - fa;
+        }
+        return db - da;
+      });
+      items.forEach((el) => grid.appendChild(el));
+    });
+  });
+
+  // Apply the default filter state on load (Home defaults to the Blogs tab).
+  apply();
+</script>

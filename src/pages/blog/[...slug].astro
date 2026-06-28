@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blog', ({ data }) =>
+    import.meta.env.DEV ? true : !data.draft,
+  );
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const d = entry.data;
+---
+<PostLayout
+  title={d.title}
+  description={d.description}
+  category={d.category}
+  date={d.pubDate}
+  cover={d.cover}
+  tags={d.tags}
+  backHref="/"
+  backLabel="Back to notes"
+  active={`/category/${d.category.toLowerCase()}`}
+>
+  <Content />
+</PostLayout>

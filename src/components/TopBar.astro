@@ -1,0 +1,119 @@
+---
+import Icon from './Icon.astro';
+import { CATEGORIES } from '../content/config';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  showTabs?: boolean;
+  showSearch?: boolean;
+  showTopicFilter?: boolean;
+}
+const {
+  title,
+  subtitle,
+  showTabs = false,
+  showSearch = true,
+  showTopicFilter = false,
+} = Astro.props;
+---
+<header class="mb-7">
+  <div class="flex flex-wrap items-center gap-4">
+    <!-- Mobile menu -->
+    <button
+      id="sidebar-open"
+      type="button"
+      class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-navy shadow-card ring-1 ring-ink/5 transition-transform duration-200 ease-spring hover:-translate-y-0.5 active:translate-y-0 lg:hidden dark:bg-navy dark:text-mist"
+      aria-label="Open menu"
+    >
+      <Icon name="menu" />
+    </button>
+
+    <div class="mr-auto">
+      <h1 class="text-2xl font-bold text-ink dark:text-paper sm:text-[1.7rem]">{title}</h1>
+      {subtitle && <p class="mt-0.5 text-sm text-navy/55 dark:text-mist/55">{subtitle}</p>}
+    </div>
+
+    {showSearch && (
+      <div class="relative w-full sm:w-72">
+        <span class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-navy/40 dark:text-mist/40">
+          <Icon name="search" class="w-4 h-4" />
+        </span>
+        <input
+          id="site-search"
+          type="search"
+          placeholder="Search notes…"
+          autocomplete="off"
+          class="w-full rounded-full border-0 bg-white py-2.5 pl-10 pr-4 text-sm text-ink shadow-card ring-1 ring-ink/5 outline-none transition-shadow duration-200 ease-spring placeholder:text-navy/40 focus:ring-2 focus:ring-teal dark:bg-navy dark:text-paper dark:placeholder:text-mist/40"
+        />
+      </div>
+    )}
+  </div>
+
+  {showTabs && (
+    <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-b border-ink/5 pb-px dark:border-white/5">
+      <div id="content-tabs" class="flex items-center gap-1" role="tablist">
+        {['Blogs', 'Projects'].map((t, i) => (
+          <button
+            type="button"
+            role="tab"
+            data-tab={t.toLowerCase()}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            class:list={[
+              'relative px-3 pb-3 pt-1 text-sm font-medium transition-colors duration-200 ease-spring',
+              i === 0
+                ? 'text-ink dark:text-paper'
+                : 'text-navy/45 hover:text-navy dark:text-mist/45 dark:hover:text-mist',
+            ]}
+          >
+            {t}
+            <span
+              class:list={[
+                'absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-growth transition-opacity duration-200 ease-spring',
+                i === 0 ? 'opacity-100' : 'opacity-0',
+              ]}
+            ></span>
+          </button>
+        ))}
+      </div>
+
+      <div class="flex items-center gap-3 pb-2.5">
+        {showTopicFilter && (
+          <div id="topic-filter-wrap" class="relative">
+            <select
+              id="topic-filter"
+              aria-label="Filter blogs by topic"
+              class="cursor-pointer appearance-none rounded-full bg-white py-1.5 pl-3.5 pr-9 text-xs font-semibold text-navy shadow-card ring-1 ring-ink/5 outline-none transition-shadow duration-200 ease-spring hover:-translate-y-px focus:ring-2 focus:ring-teal dark:bg-navy dark:text-mist dark:ring-white/5"
+            >
+              <option value="all">All topics</option>
+              {CATEGORIES.map((c) => (
+                <option value={c.toLowerCase()}>{c}</option>
+              ))}
+            </select>
+            <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-navy/45 dark:text-mist/45">
+              <Icon name="chevron" class="w-3.5 h-3.5" />
+            </span>
+          </div>
+        )}
+
+        <div class="flex rounded-full bg-ink/[0.04] p-1 dark:bg-white/5">
+          {['Recent', 'Popular'].map((s, i) => (
+            <button
+              type="button"
+              data-sort={s.toLowerCase()}
+              aria-pressed={i === 0 ? 'true' : 'false'}
+              class:list={[
+                'rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-200 ease-spring',
+                i === 0
+                  ? 'bg-white text-ink shadow-card dark:bg-navy dark:text-paper'
+                  : 'text-navy/50 hover:text-navy dark:text-mist/50 dark:hover:text-mist',
+              ]}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+</header>
