@@ -1,27 +1,10 @@
 {
-  "portrait": "/me.jpg",
-  "headline": "Hi, I'm Niko not Nico",
-  "linkedin": "https://www.linkedin.com/in/nikoloz-butikashvili-483829119/",
-  "story": "Hi, I'm Niko. I write about finance, economics, technology, energy, sports, and the books and ideas that tie them together.\n\nThis is a placeholder — replace it with a few sentences about who you are, what you care about, and what you want readers to take away. Keep it short and personal.\n\nWhen I'm not writing, I'm building projects that put these ideas into practice.",
-  "experience": [
-    {
-      "role": "Associate Strategy Advisor",
-      "org": "Vattenfall",
-      "period": "2024 - Present",
-      "detail": "I advise projects on governance, assurance, AI, and automation."
-    },
-    {
-      "role": "Supplier Risk Analyst",
-      "org": "Siemens Gamesa ",
-      "period": "2022 - 2023",
-      "detail": "Conducted comprehensive financial assessments to determine the credit risks of existing and potential suppliers."
-    },
-    {
-      "role": "Audit Intern",
-      "org": "Grant Thornton",
-      "period": "2020 - 2021",
-      "detail": "Conducted multiple interim financial audits"
-    }
+  "skills": [
+    "Econometrics",
+    "Financial Modeling",
+    "Speaking",
+    "Automation",
+    "Leadership"
   ],
   "education": [
     {
@@ -43,12 +26,25 @@
       "detail": "Focus: Philosophy and Theology"
     }
   ],
-  "skills": [
-    "Econometrics",
-    "Financial Modeling",
-    "Speaking",
-    "Automation",
-    "Leadership"
+  "experience": [
+    {
+      "role": "Associate Strategy Advisor",
+      "org": "Vattenfall",
+      "period": "2024 - Present",
+      "detail": "I advise projects on governance, assurance, AI, and automation."
+    },
+    {
+      "role": "Supplier Risk Analyst",
+      "org": "Siemens Gamesa ",
+      "period": "2022 - 2023",
+      "detail": "Conducted comprehensive financial assessments to determine the credit risks of existing and potential suppliers."
+    },
+    {
+      "role": "Audit Intern",
+      "org": "Grant Thornton",
+      "period": "2020 - 2021",
+      "detail": "Conducted multiple interim financial audits"
+    }
   ],
   "hobbies": [
     "Reading",
@@ -56,6 +52,8 @@
     "Skiing",
     "Traveling"
   ],
+  "headline": "Hi, I'm Niko",
+  "story": "Currently based in Hamburg, Germany, I work as a strategy advisor for an international energy firm. Having previously lived in Spain and the United States, my global perspective heavily influences my work and writing. \n\nOn this blog, I explore the intersections of finance, economics, technology, and the energy sector, sharing my ideas and insights. I also enjoy diving into hands-on side projects that catch my interest. \n\nWhen I'm not writing or working, you can usually find me playing basketball, reading a good book, hitting the ski slopes, or traveling to new destinations.",
   "certifications": [
     {
       "title": "PMP",
@@ -72,5 +70,7 @@
       "issuer": "Telc gGmbH",
       "year": "2026"
     }
-  ]
+  ],
+  "portrait": "/me.jpg",
+  "linkedin": "https://www.linkedin.com/in/nikoloz-butikashvili-483829119/"
 }
