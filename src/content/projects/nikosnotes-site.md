@@ -3,7 +3,7 @@ title: "Niko's Notes "
 description: Personal Notebook
 stack: []
 link: https://nikosnotes.com/
-pubDate: 2024-05-20
+pubDate: 2026-06-30
 cover: https://placehold.co/1200x600/0D1321/5FBF72?text=Nikosnotes
 featured: false
 draft: false
