@@ -1,13 +1,13 @@
 {
   "portrait": "/me.jpg",
-  "headline": "Hi, I'm Niko.",
+  "headline": "Hi, I'm Niko not Nico",
   "story": "Hi, I'm Niko. I write about finance, economics, technology, energy, sports, and the books and ideas that tie them together.\n\nThis is a placeholder — replace it with a few sentences about who you are, what you care about, and what you want readers to take away. Keep it short and personal.\n\nWhen I'm not writing, I'm building projects that put these ideas into practice.",
   "experience": [
     {
       "role": "Associate Strategy Advisor",
       "org": "Vattenfall",
       "period": "2024 - Present",
-      "detail": "I advise projects on governance, assurance, AI, and automation.\""
+      "detail": "I advise projects on governance, assurance, AI, and automation."
     },
     {
       "role": "Supplier Risk Analyst",
@@ -52,22 +52,21 @@
   ],
   "hobbies": [
     "Reading",
-    "Running",
-    "Chess",
-    "Travel",
-    "Photography",
-    "Cooking"
+    "Basketball",
+    "Skiing",
+    "Boxing",
+    "Learning"
   ],
   "certifications": [
     {
-      "title": "Certification name",
-      "issuer": "Issuing organization",
-      "year": "20XX"
+      "title": "PMP",
+      "issuer": "Project Management Institute",
+      "year": "2025"
     },
     {
-      "title": "Another certificate",
-      "issuer": "Issuing organization",
-      "year": "20XX"
+      "title": "Google Project Management: Professional Certificate",
+      "issuer": "Google",
+      "year": "2023"
     }
   ]
 }
