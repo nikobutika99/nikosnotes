@@ -1,7 +1,7 @@
 ---
 title: Unemployment 4.3%?
 description: To understand the true health of our economy, we have to look past
-  the headlines and examine broader metrics like the 8.3% U-6 rate.
+  the headlines and examine broader metrics like the 8.1% U-6 rate.
 category: Economy
 pubDate: 2026-06-30
 cover: /images/uploads/screenshot-2026-06-30-175915.png
