@@ -9,6 +9,7 @@ export const CATEGORIES = [
   'Energy',
   'Sports',
   'Literature',
+  'Other',
 ] as const;
 
 const blog = defineCollection({

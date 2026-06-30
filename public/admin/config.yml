@@ -39,7 +39,7 @@ collections:
       - label: Category
         name: category
         widget: select
-        options: [Finance, Economy, Technology, Energy, Sports, Literature]
+        options: [Finance, Economy, Technology, Energy, Sports, Literature, Other]
         default: Technology
       - { label: 'Publish date', name: pubDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' }
       - { label: 'Cover image', name: cover, widget: image, required: false, hint: 'Optional. A nice 16:10 image works best.' }
