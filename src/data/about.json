@@ -43,19 +43,17 @@
     }
   ],
   "skills": [
-    "Financial analysis",
-    "Markets & macro",
-    "Writing & research",
-    "Web development",
-    "Energy & sustainability",
-    "Data & visualization"
+    "Econometrics",
+    "Financial Modeling",
+    "Speaking",
+    "Automation",
+    "Leadership"
   ],
   "hobbies": [
     "Reading",
     "Basketball",
     "Skiing",
-    "Boxing",
-    "Learning"
+    "Traveling"
   ],
   "certifications": [
     {
@@ -67,6 +65,11 @@
       "title": "Google Project Management: Professional Certificate",
       "issuer": "Google",
       "year": "2023"
+    },
+    {
+      "title": "telc Deutsch B1 Zertifikat",
+      "issuer": "Telc gGmbH",
+      "year": "2026"
     }
   ]
 }
