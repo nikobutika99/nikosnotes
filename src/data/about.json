@@ -24,10 +24,22 @@
   ],
   "education": [
     {
-      "degree": "Your degree (e.g. BSc Economics)",
-      "school": "University name",
-      "period": "20XX — 20XX",
-      "detail": "A line about your focus, achievements, or relevant coursework."
+      "degree": "Master of Science in Economics and Finance",
+      "school": "Eberhard Karls Universität Tübingen",
+      "period": "2020 - 2023",
+      "detail": "Focus : Multivariate Statistics, Calculus, Stochastic Calculus, Time Series\nAnalysis, Econometric Modeling, Financial Econometrics, Applied Econometrics, Corporate Finance, Derivatives,  Quantitative Finance "
+    },
+    {
+      "degree": "Bachelor of Arts in International Business Administration",
+      "school": "Jacobs University Bremen",
+      "detail": "Focus:  International Economics, Microeconomics, Economic policy , Corporate, Finance",
+      "period": "2018 - 2020"
+    },
+    {
+      "degree": "Semester",
+      "school": "Xavier University",
+      "period": "2017",
+      "detail": "Focus: Philosophy and Theology"
     }
   ],
   "skills": [
