@@ -6,7 +6,7 @@ import { site } from '../site';
 import about from '../data/about.json';
 
 // About content is editable in the CMS at /admin → "About Page".
-const { portrait, headline, experience, education, skills, hobbies, certifications } = about;
+const { portrait, headline, linkedin, experience, education, skills, hobbies, certifications } = about;
 // Story is one text field; split it into paragraphs on blank/new lines.
 const storyParagraphs = (about.story || '')
   .split(/\n+/)
@@ -34,13 +34,28 @@ const storyParagraphs = (about.story || '')
       <div class="mt-3 space-y-2.5 text-[0.95rem] text-navy/70 dark:text-mist/70">
         {storyParagraphs.map((p) => <p class="leading-relaxed">{p}</p>)}
       </div>
-      <a
-        href={`mailto:${site.email}`}
-        class="mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-teal active:translate-y-0 focus-visible:ring-2 focus-visible:ring-teal dark:bg-paper dark:text-ink dark:hover:bg-teal dark:hover:text-paper"
-      >
-        Get in touch
-        <Icon name="arrow" class="w-4 h-4" />
-      </a>
+      <div class="mt-6 flex items-center gap-3">
+        <a
+          href={`mailto:${site.email}`}
+          class="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-teal active:translate-y-0 focus-visible:ring-2 focus-visible:ring-teal dark:bg-paper dark:text-ink dark:hover:bg-teal dark:hover:text-paper"
+        >
+          Get in touch
+          <Icon name="arrow" class="w-4 h-4" />
+        </a>
+        {linkedin && (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect on LinkedIn"
+            class="grid h-11 w-11 place-items-center rounded-full bg-white text-[#0A66C2] shadow-card ring-1 ring-ink/5 transition-all duration-200 ease-spring hover:-translate-y-0.5 hover:bg-[#0A66C2] hover:text-white active:translate-y-0 focus-visible:ring-2 focus-visible:ring-teal dark:bg-navy dark:ring-white/5"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+          </a>
+        )}
+      </div>
     </div>
   </section>
 

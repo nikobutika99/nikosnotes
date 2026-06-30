@@ -77,6 +77,7 @@ collections:
         fields:
           - { label: 'Profile photo', name: portrait, widget: image, required: false, hint: 'Square photo works best. Updates the About page and sidebar.' }
           - { label: Headline, name: headline, widget: string, hint: "e.g. \"Hi, I'm Niko.\"" }
+          - { label: 'LinkedIn URL', name: linkedin, widget: string, required: false, hint: 'Full URL to your profile, e.g. https://www.linkedin.com/in/username. Leave blank to hide the icon.' }
           - { label: Story, name: story, widget: text, hint: 'A short bio. Separate paragraphs with a blank line.' }
           - label: Experience
             name: experience
