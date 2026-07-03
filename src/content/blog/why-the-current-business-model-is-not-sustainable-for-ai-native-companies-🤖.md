@@ -5,7 +5,7 @@ category: Technology
 pubDate: 2026-07-04
 cover: /images/uploads/gemini_generated_image_8kl3xx8kl3xx8kl3.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 If we look at the current benchmarks, Anthropic and OpenAI are usually leading the charts when it comes to the most powerful AI models, but this kind of growth is not sustainable.
