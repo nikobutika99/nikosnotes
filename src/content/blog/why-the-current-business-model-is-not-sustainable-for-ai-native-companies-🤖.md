@@ -10,7 +10,7 @@ draft: false
 ---
 If we look at the current benchmarks, Anthropic and OpenAI are usually leading the charts when it comes to the most powerful AI models, but this kind of growth is not sustainable.
 
-So far, Anthropic has raised almost 100 billion dollars, and most likely they will not be able to raise more in the private market. When you raise capital in the private market, you have a very limited number of rounds until all the investors are so diluted that the only option to raise additional capital is going public. It is not just about dilution. Every private investor invests in a company at an early stage because they want to cash out at some point. Investors usually cash out in two ways: either when the company goes public or when it is acquired by another company.
+So far, Anthropic has raised over 100 billion dollars, and most likely they will not be able to raise more in the private market. When you raise capital in the private market, you have a very limited number of rounds until all the investors are so diluted that the only option to raise additional capital is going public. It is not just about dilution. Every private investor invests in a company at an early stage because they want to cash out at some point. Investors usually cash out in two ways: either when the company goes public or when it is acquired by another company.
 
 ### **🧱 The Acquisition Blockade**
 
@@ -22,7 +22,7 @@ These trustees have the power to elect and remove members of Anthropic’s corpo
 
 ### **📉 The Limits of Going Public**
 
-Okay, so what is left for Anthropic? The only way to raise additional capital is to go public. When a company goes public, they raise capital initially, but after that, there is no money flowing into the company from shares. After that, the only way to raise additional capital is debt.
+Okay, so what is left for Anthropic? The only way to raise additional capital is to go public. When a company goes public, they raise capital initially, but after that, there is no money flowing into the company from shares. After that, you need debt.
 
 Technically they can issue more shares, but doing so continuously dilutes existing shareholders and drives down the stock price. Public markets have little patience for companies that issue new equity just to cover operating losses (like ongoing compute costs). You can maintain your conclusion by arguing that the market's tolerance for endless equity raises is the real constraint, rather than a structural inability to issue shares.
 
