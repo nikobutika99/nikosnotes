@@ -24,7 +24,7 @@ These trustees have the power to elect and remove members of Anthropic’s corpo
 
 Okay, so what is left for Anthropic? The only way to raise additional capital is to go public. When a company goes public, they raise capital initially, but after that, there is no money flowing into the company from shares. After that, you need debt.
 
-Technically they can issue more shares, but doing so continuously dilutes existing shareholders and drives down the stock price. Public markets have little patience for companies that issue new equity just to cover operating losses (like ongoing compute costs). You can maintain your conclusion by arguing that the market's tolerance for endless equity raises is the real constraint, rather than a structural inability to issue shares.
+Technically they can issue more shares, but doing so continuously dilutes existing shareholders and drives down the stock price. Public markets have little patience for companies that issue new equity just to cover operating losses (like ongoing compute costs). 
 
 Let's see how much they can raise when they go public. When a company goes public, they issue new shares (free float). SpaceX just raised a record amount of capital at 75 billion, and they build rockets, have satellites, and also their own powerful AI model. Even if Anthropic would be valued around 1 trillion and they issue a 5% free float, the most they will be able to raise is an extra 50 billion. And what happens next?
 
