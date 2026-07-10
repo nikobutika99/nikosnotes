@@ -3,7 +3,7 @@ title: "Reading Kafka: My Take on The Metamorphosis"
 description: I would not be friends with Kafka
 category: Literature
 pubDate: 2026-07-10
-cover: /images/uploads/gemini_generated_image_olho8wolho8wolho.png
+cover: /images/uploads/0ee1e19f-d2b0-4ede-bc17-414b7a0610b6.png
 tags: []
 featured: false
 draft: false
