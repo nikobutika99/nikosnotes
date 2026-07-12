@@ -1,6 +1,6 @@
 ---
 title: "The Disappearing Accountant: Where Human Judgment Survives in Digital Finance"
-description: Mabey busy season should not be that busy
+description: Maybe busy season should not be that busy
 category: Finance
 pubDate: 2026-07-12
 cover: /images/uploads/gemini_generated_image_ixxzlbixxzlbixxz.png
