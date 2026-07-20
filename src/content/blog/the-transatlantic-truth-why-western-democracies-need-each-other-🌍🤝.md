@@ -5,7 +5,7 @@ category: Economy
 pubDate: 2026-07-20
 cover: /images/uploads/chatgpt-image-jul-20-2026-04_42_58-pm.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 There is a growing trend of polarization between countries and general tension in the world. I actually find it normal for citizens to want their country to do well and to prioritize its needs, but this must be logical. I see an increasing narrative, especially coming from the U.S., that it doesn't need Europe, that Europe takes advantage of the U.S., and that the U.S. should not care about Europe because there is an ocean between us. In Europe, I also frequently hear claims about the U.S. such as, "These people don’t know what they are doing," "Let's become more independent," or "We don’t need them." 🇺🇸🇪🇺🗣️
