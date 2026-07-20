@@ -5,7 +5,7 @@ category: Technology
 pubDate: 2026-07-20
 cover: /images/uploads/chatgpt-image-jul-20-2026-04_51_37-pm.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 My take on the Kimi K3 model that was released last week. To provide some background, Kimi AI models are developed by the Chinese startup Moonshot, which was founded in 2023. The CEO and founder, Yang Zhillin, pursued his PhD at Carnegie Mellon University. He worked for a time at Google Brain and Meta Labs before returning to China. Let's move on to the model itself. 🤖
