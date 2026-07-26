@@ -5,7 +5,7 @@ category: Economy
 pubDate: 2026-07-02
 cover: /images/uploads/gemini_generated_image_.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 The US recently reported an updated 12-month rolling inflation **rate of 4.2%**. But here is the thing that triggers my "economic brain":
