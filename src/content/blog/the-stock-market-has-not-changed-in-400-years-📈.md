@@ -5,7 +5,7 @@ category: Finance
 pubDate: 2026-07-26
 cover: /images/uploads/odd_socks_sell_everything_meme.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 We have digitized almost everything, yet the stock market has not really changed the way it operates.
