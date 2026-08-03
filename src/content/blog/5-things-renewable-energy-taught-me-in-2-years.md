@@ -5,7 +5,7 @@ category: Energy
 pubDate: 2026-08-03
 cover: /images/uploads/chatgpt-image-aug-3-2026-04_18_58-pm.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 After almost two years working in the renewable energy sector, there are a few interesting facts and observations I have learned and gathered.
