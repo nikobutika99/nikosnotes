@@ -5,7 +5,7 @@ category: Economy
 pubDate: 2026-08-09
 cover: /images/uploads/chatgpt-image-aug-9-2026-05_20_54-pm.png
 tags: []
-featured: false
+featured: true
 draft: false
 ---
 One number my economic brain is always interested in checking is the money supply of an economy, just to get a feeling for what direction the economy is heading. It is a pretty common measurement, although the exact definitions and categories vary between countries.
