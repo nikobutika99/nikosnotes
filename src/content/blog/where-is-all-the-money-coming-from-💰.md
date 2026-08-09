@@ -54,17 +54,17 @@ For example, after COVID, we had an extremely positive liquidity environment. Mo
 
 There was relatively more liquidity available.
 
-That was one factor that helped create unusually loose financial conditions. There was newly available money trying to find its owner, whether through consumption, investments, real estate, financial markets, or business activity.
+The way my brain perceives this liquidity gap between money supply and GDP growth is that suddenly there is a bunch of new money available in the economy trying to find new owners.
 
 ### Observations Around the World 🌍
 
-ChinaChina is especially interesting to me because its broad money supply has historically grown very quickly relative to many developed economies.
+China is especially interesting to me because its broad money supply has historically grown very quickly relative to many developed economies.
 
 If money supply continues growing faster than nominal economic activity for long periods, I start asking questions about where that liquidity is going and how sustainable the economic model is.
 
 I always question how long China can continue maintaining an economy that relies heavily on credit, investment, government support, and subsidies in certain sectors.
 
-GeorgiaThen we have my beloved Georgia.
+Then we have my beloved Georgia.
 
 Georgia has had unusually high GDP growth over the past few years, but part of that growth has clearly been connected to the ongoing war between Ukraine and Russia.
 
