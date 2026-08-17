@@ -3,6 +3,7 @@ title: "What The Brothers Karamazov Taught Me: Alyosha's win in life"
 description: a lot of spoiler upcoming
 category: Literature
 pubDate: 2026-08-17
+cover: /images/uploads/chatgpt-image-aug-17-2026-11_54_26-pm.png
 tags: []
 featured: false
 draft: false
