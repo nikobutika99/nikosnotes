@@ -40,71 +40,9 @@ This is not normal, by the way. We are seeing levels of market concentration and
 
 So what are the characteristics that would tell us that this is probably a bubble?
 
-## **Look at the Valuations**
+![](/images/uploads/screenshot-2026-08-30-210712.png)
 
-**Company**
 
-**Ticker**
-
-**Approx. Market Cap**
-
-**Trailing P/E**
-
-Nvidia
-
-NVDA
-
-~$5.3T
-
-~40x+
-
-Alphabet
-
-GOOGL / GOOG
-
-~$4.4T
-
-~25x
-
-Microsoft
-
-MSFT
-
-~$3.6T
-
-~30x+
-
-Amazon
-
-AMZN
-
-~$2.9T
-
-~40x
-
-Broadcom
-
-AVGO
-
-~$2.0T
-
-~70x+
-
-Meta Platforms
-
-META
-
-~$1.5T
-
-~25x
-
-Tesla
-
-TSLA
-
-~$1.3T
-
-~100x+
 
 If you take just trailing P/E, the historical long-term average has been somewhere around the mid-teens, although the exact number depends on the period you measure.
 
