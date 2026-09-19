@@ -52,29 +52,46 @@ const {
 
   {showTabs && (
     <div class="mt-6 flex flex-wrap items-center justify-between gap-4 border-b border-ink/5 pb-px dark:border-white/5">
-      <div id="content-tabs" class="flex items-center gap-1" role="tablist">
-        {['Blogs', 'Projects'].map((t, i) => (
-          <button
-            type="button"
-            role="tab"
-            data-tab={t.toLowerCase()}
-            aria-selected={i === 0 ? 'true' : 'false'}
-            class:list={[
-              'relative px-3 pb-3 pt-1 text-sm font-medium transition-colors duration-200 ease-spring',
-              i === 0
-                ? 'text-ink dark:text-paper'
-                : 'text-navy/45 hover:text-navy dark:text-mist/45 dark:hover:text-mist',
-            ]}
-          >
-            {t}
-            <span
+      <div class="flex flex-wrap items-center gap-1">
+        <div id="content-tabs" class="flex items-center gap-1" role="tablist">
+          {['Blogs', 'Projects'].map((t, i) => (
+            <button
+              type="button"
+              role="tab"
+              data-tab={t.toLowerCase()}
+              aria-selected={i === 0 ? 'true' : 'false'}
               class:list={[
-                'absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-growth transition-opacity duration-200 ease-spring',
-                i === 0 ? 'opacity-100' : 'opacity-0',
+                'relative px-3 pb-3 pt-1 text-sm font-medium transition-colors duration-200 ease-spring',
+                i === 0
+                  ? 'text-ink dark:text-paper'
+                  : 'text-navy/45 hover:text-navy dark:text-mist/45 dark:hover:text-mist',
               ]}
-            ></span>
-          </button>
-        ))}
+            >
+              {t}
+              <span
+                class:list={[
+                  'absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-growth transition-opacity duration-200 ease-spring',
+                  i === 0 ? 'opacity-100' : 'opacity-0',
+                ]}
+              ></span>
+            </button>
+          ))}
+        </div>
+
+        <!-- External link: kept outside the tablist so screen readers don't treat it as a tab. -->
+        <a
+          href="https://paper-trading-tan.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-1 px-3 pb-3 pt-1 text-sm font-medium text-navy/45 transition-colors duration-200 ease-spring hover:text-navy focus-visible:text-navy active:text-ink dark:text-mist/45 dark:hover:text-mist dark:focus-visible:text-mist dark:active:text-paper"
+        >
+          Niko's Trades
+          <Icon
+            name="arrow-up-right"
+            class="h-3.5 w-3.5 transition-transform duration-200 ease-spring group-hover:-translate-y-px group-hover:translate-x-px group-active:translate-x-0 group-active:translate-y-0"
+          />
+          <span class="sr-only">(opens in a new tab)</span>
+        </a>
       </div>
 
       <div class="flex items-center gap-3 pb-2.5">
