@@ -5,7 +5,7 @@ category: Economy
 pubDate: 2026-09-06
 cover: /images/uploads/unemployment.png
 tags: []
-featured: true
+featured: false
 draft: false
 ---
 It is clear that, on a weekly basis, we see these new frontier models being dropped. Last week, Fable 5.1 and ChatGPT Astra 6 were dropped.
