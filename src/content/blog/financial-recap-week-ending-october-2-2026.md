@@ -74,8 +74,6 @@ The U.S.-Iran war is still a big uncertainty. Nothing is really clear, so the en
 
 Most of the biggest gainers were IT companies this week. I will introduce a couple of interesting ones.
 
-
-
 ## 1. Lumentum: +17.81%
 
 It is also data-center-related growth.
@@ -107,8 +105,6 @@ Lower market cap
 Nvidia is an investor in Coherent. Nvidia invested **$2 billion** into the company, and there is also a multibillion-dollar purchase commitment, although the exact purchase commitment number has not been disclosed.
 
 If they can deliver and increase their production, I see potential here.
-
-
 
 ## 3. Synopsys: +17.31%
 
@@ -210,7 +206,7 @@ I personally don't use anything other than salt and pepper, so I would stay away
 
 **Markets to watch:** Tech, REITs, utilities, homebuilders, insurers.
 
-### 4. PepsiCo
+### 3. PepsiCo
 
 **What matters:** Consumer pricing power, volumes, and commodity and freight cost trends.
 
@@ -220,7 +216,7 @@ I personally don't use anything other than salt and pepper, so I would stay away
 
 **Markets to watch:** Staples, retailers, packaging, agricultural inputs.
 
-### 5. Delta
+### 4. Delta
 
 **What matters:** Travel demand versus fuel inflation.
 
