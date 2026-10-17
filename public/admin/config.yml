@@ -67,6 +67,46 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Body, name: body, widget: markdown }
 
+  - name: media
+    label: Media
+    label_singular: Media post
+    folder: src/content/media
+    create: true
+    slug: '{{slug}}'
+    summary: '{{title}}  ·  {{pubDate}}'
+    sortable_fields: [pubDate, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: description, widget: text, hint: 'One or two sentences shown on the card.' }
+      - { label: 'Event date', name: pubDate, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' }
+      - label: Photos
+        name: images
+        widget: list
+        label_singular: Photo
+        summary: '{{fields.caption}}'
+        # No `min: 1`: tested, Decap 3.17 still publishes an empty list. The
+        # schema tolerates zero photos and the post page shows a notice instead.
+        fields:
+          # USER DATA / PRIVACY: phone photos embed GPS location and device info.
+          # media_processing re-encodes each upload in the browser (JPEG, PNG and
+          # WebP only), which drops that metadata, and shrinks it to a 1600px-wide
+          # WebP to save bandwidth and repo space. iPhone HEIC files are NOT
+          # processed and would upload full size WITH location: use JPEG instead.
+          # Limitation: `width` is an exact width, so smaller images get enlarged.
+          - label: Photo
+            name: src
+            widget: image
+            hint: 'JPEG or PNG. Shrunk to 1600px WebP on upload, location data removed. Not iPhone HEIC.'
+            media_processing:
+              enabled: true
+              format: { enabled: true, default: webp }
+              quality: 80
+              width: 1600
+              strip_metadata: true
+          - { label: Caption, name: caption, widget: string, required: false }
+      - { label: Description, name: body, widget: markdown, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false, hint: 'Drafts are hidden on the live site.' }
+
   - name: pages
     label: Pages
     files:

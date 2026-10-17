@@ -42,4 +42,21 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { blog, projects };
+// Photo posts for recent events. Image paths are plain strings like the other
+// collections; photos are already shrunk to WebP by the CMS at upload time
+// (see media_processing in public/admin/config.yml), so no build-time step.
+const media = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    // Lenient on purpose: a post saved without photos must not fail the build.
+    images: z
+      .array(z.object({ src: z.string(), caption: z.string().optional() }))
+      .default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, projects, media };

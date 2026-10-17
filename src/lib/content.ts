@@ -1,7 +1,7 @@
 import { getCollection } from 'astro:content';
 
 export type CardItem = {
-  type: 'blog' | 'project';
+  type: 'blog' | 'project' | 'media';
   title: string;
   description: string;
   category: string;
@@ -49,12 +49,34 @@ export async function getProjectCards(): Promise<CardItem[]> {
     .sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
+/**
+ * Media (event photo) posts as cards, newest first. The first photo is the
+ * card cover; posts without photos fall back to the coverFor() placeholder.
+ */
+export async function getMediaCards(): Promise<CardItem[]> {
+  const entries = await getCollection('media', isPublished);
+  return entries
+    .map((e) => ({
+      type: 'media' as const,
+      title: e.data.title,
+      description: e.data.description,
+      category: 'Media',
+      url: `/media/${e.slug}/`,
+      cover: e.data.images[0]?.src,
+      date: e.data.pubDate,
+      tags: [],
+      featured: false,
+    }))
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
 export async function getAllCards(): Promise<CardItem[]> {
-  const [blog, projects] = await Promise.all([
+  const [blog, projects, media] = await Promise.all([
     getBlogCards(),
     getProjectCards(),
+    getMediaCards(),
   ]);
-  return [...blog, ...projects].sort(
+  return [...blog, ...projects, ...media].sort(
     (a, b) => b.date.getTime() - a.date.getTime(),
   );
 }
