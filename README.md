@@ -13,7 +13,17 @@ npm run dev        # http://localhost:3000
 
 You never have to touch the code editor to publish. Two ways:
 
+### Save vs Publish (Netlify credits)
+The editor uses **draft → publish** mode to save Netlify credits (free plan: 300 credits/month; every live update costs 15).
+- **Save** stores a draft as a GitHub pull request. Netlify builds a free preview. **0 credits.** Edit and save as often as you like.
+- **Publish** (after setting the draft's status to *Ready*) puts it on nikosnotes.com. **15 credits.**
+- Drafts live in the public GitHub repo, so they aren't secret.
+
+### Media posts (photos)
+Under **Media**, add a post with several photos and captions. Uploaded photos are automatically shrunk to 1600px WebP with location data removed. **iPhone HEIC photos are not converted** (they'd upload full size with GPS): set iPhone → Settings → Camera → Formats → *Most Compatible*, or upload from the phone's browser.
+
 ### Try it locally (no login)
+Note: local editing doesn't support draft → publish mode; use the live `/admin` for normal editing.
 Open two terminals:
 
 ```bash
