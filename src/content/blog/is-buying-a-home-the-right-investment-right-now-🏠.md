@@ -76,7 +76,7 @@ But if you're purchasing your first home, where you're actually going to live, m
 
 Hamburg is a very unique city.
 
-As older homeowners pass away and their properties eventually become available for sale, there will still be significant demand for housing.
+Even when the older homeowners pass away and their properties eventually become available for sale, there will still be significant demand for housing.
 
 With the current pace of construction and old infrastructure, demand in Hamburg is so high that I personally don't expect any major house price drops over the next 15 years.
 
@@ -86,7 +86,7 @@ There is a very slow buildout.
 
 Housing in Hamburg is going to remain scarce unless the city starts building at a much larger scale, significantly increases housing density, and develops a lot of new S-Bahn and U-Bahn lines for connectivity. I don't see that happening quickly.
 
-So if you've decided to buy something in Hamburg, I don't think prices will get dramatically better anytime soon. You might as well start looking now.
+So if you've decided to buy something in Hamburg, I don't think prices will get dramatically better anytime soon. You might as well start looking now. Also prices for renting are not getting better as well
 
 If you don't care where you buy, there are a lot more affordable cities in Germany.
 
